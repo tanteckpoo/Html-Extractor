@@ -29,7 +29,7 @@ Build Instructions
 Easy Install
 -----------------------
 
--	Copy the jar you just built (html-extractor-jar-with-dependencies.jar) 
+-	Copy the jar you just built (html-extractor-x.x.x.jar) 
 	from the 'target' directory to the '/lib/ext' directory in your 
 	local $JMETER_HOME installation.
 	
