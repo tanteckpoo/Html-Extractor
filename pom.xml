@@ -68,7 +68,7 @@
 					  <overWriteSnapshots>false</overWriteSnapshots>
 					  <overWriteIfNewer>true</overWriteIfNewer>
 					  <excludeGroupIds>org.apache.jmeter,javax.activation,org.apache.avalon,org.apache.bsf,avalon,commons-codec,commons-collections,commons-httpclient,commons-io,commons-jexl,commons-lang,commons-logging,commons-net,excalibur,org.apache.geronimo.specs,org.htmlparser,org.apache.httpcomponents,jcharts,logkit,oro,xalan,xerces,xml-apis,xpp3,bsf,org.beanshell,org.apache.xmlgraphics</excludeGroupIds>
-					  <excludeArtifactIds>commons-jexl,js,jtidy,junit,mail,serializer,soap,xstream,xmlenc,jdom</excludeArtifactIds>
+					  <excludeArtifactIds>commons-jexl,js,jtidy,junit,mail,serializer,soap,xstream,xmlenc,jdom,tools,hamcrest-core,bcprov-jdk15,bcmail-jdk15</excludeArtifactIds>
 					 </configuration>
 				  </execution>
 				</executions>
