@@ -1,0 +1,79 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.apache.jmeter.plugins.html.extractor</groupId>
+	<artifactId>html-extractor</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
+
+	<name>html-extractor</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java-version>1.6</java-version>
+		<jmeter.version>2.6</jmeter.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.jmeter</groupId>
+			<artifactId>ApacheJMeter_core</artifactId>
+			<version>${jmeter.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<!-- jsoup HTML parser library @ http://jsoup.org/ -->
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.6.3</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<source>${java-version}</source>
+					<target>${java-version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<finalName>${pom.artifactId}</finalName>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.4</version>
+				<executions>
+				  <execution>
+					<id>copy-dependencies</id>
+					<phase>package</phase>
+					<goals>
+					  <goal>copy-dependencies</goal>
+					</goals>
+					<configuration>
+					  <outputDirectory>${project.build.directory}/lib</outputDirectory>
+					  <overWriteReleases>false</overWriteReleases>
+					  <overWriteSnapshots>false</overWriteSnapshots>
+					  <overWriteIfNewer>true</overWriteIfNewer>
+					  <excludeGroupIds>org.apache.jmeter,javax.activation,org.apache.avalon,org.apache.bsf,avalon,commons-codec,commons-collections,commons-httpclient,commons-io,commons-jexl,commons-lang,commons-logging,commons-net,excalibur,org.apache.geronimo.specs,org.htmlparser,org.apache.httpcomponents,jcharts,logkit,oro,xalan,xerces,xml-apis,xpp3,bsf,org.beanshell,org.apache.xmlgraphics</excludeGroupIds>
+					  <excludeArtifactIds>commons-jexl,js,jtidy,junit,mail,serializer,soap,xstream,xmlenc,jdom</excludeArtifactIds>
+					 </configuration>
+				  </execution>
+				</executions>
+			  </plugin>
+		</plugins>
+		</plugins>
+	</build>
+</project>
