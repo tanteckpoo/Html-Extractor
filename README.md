@@ -26,7 +26,7 @@ Build Instructions
 	```	 
 -	All components will be compiled in the 'target' subdirectory.
 
-Easy Instal
+Easy Install
 -----------------------
 
 -	Copy the jar you just built (html-extractor-jar-with-dependencies.jar) 
